@@ -8,45 +8,102 @@
 :root{--ink:#30251f;--brown:#624634;--olive:#66724b;--cream:#fbf7ef;--sand:#eee3d1;--gold:#c99b55;--muted:#70665c}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:#f2ede4;color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.8}
+body{margin:0;background:#f2ede4;color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;line-height:1.8;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 .hero{background:linear-gradient(135deg,#3e3028,#68503b);color:#fff9ef;padding:56px 22px 46px;text-align:center}
 .kicker{letter-spacing:.18em;font-size:.86rem;color:#e7d1a9;font-weight:700}
-h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.25;margin:12px auto;max-width:1000px}
+h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.25;margin:12px auto;max-width:1000px;word-break:break-word}
 .hero p{margin:8px 0 0;color:#f2e5d0}
 .hero-line{width:74px;height:4px;background:var(--gold);border-radius:9px;margin:22px auto}
 .nav{position:sticky;top:0;z-index:5;background:#fffdf8ed;backdrop-filter:blur(8px);border-bottom:1px solid #e5d8c7}
-.nav-inner{max-width:1100px;margin:auto;display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:10px 14px}
-.nav a{padding:7px 13px;border-radius:999px;font-size:.92rem;font-weight:700}
+.nav-inner{max-width:1100px;margin:auto;display:flex;gap:8px;justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:10px 14px}
+.nav-inner::-webkit-scrollbar{display:none}
+.nav a{padding:7px 13px;border-radius:999px;font-size:.92rem;font-weight:700;white-space:nowrap;flex-shrink:0}
 .nav a:hover{background:#eee3d1}
-main{max-width:1100px;margin:34px auto;padding:0 18px 60px}
-.intro{background:#fffdf8;border:1px solid #e8ddcd;border-radius:20px;padding:24px 28px;margin-bottom:22px;box-shadow:0 8px 25px #3b2c1d0a}
+main{max-width:1100px;margin:34px auto;padding:0 18px 60px;overflow-x:hidden}
+.intro{background:#fffdf8;border:1px solid #e8ddcd;border-radius:20px;padding:24px 28px;margin-bottom:22px;box-shadow:0 8px 25px #3b2c1d0a;word-break:break-word}
 .intro strong{color:var(--olive)}
-.section{background:#fffdf8;border:1px solid #e8ddcd;border-radius:20px;padding:28px;margin:22px 0;box-shadow:0 8px 25px #3b2c1d0a;scroll-margin-top:85px}
-.section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.section{background:#fffdf8;border:1px solid #e8ddcd;border-radius:20px;padding:28px;margin:22px 0;box-shadow:0 8px 25px #3b2c1d0a;scroll-margin-top:85px;overflow:hidden}
+.section-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;flex-wrap:wrap}
 .num{width:46px;height:46px;flex:0 0 46px;display:grid;place-items:center;border-radius:14px;background:#e8eddf;color:#4f6038;font-weight:900;font-size:1.15rem}
-h2{font-size:1.55rem;margin:0;line-height:1.4}
-.sub{color:var(--muted);font-size:.95rem;margin:3px 0 0}
+h2{font-size:1.55rem;margin:0;line-height:1.4;word-break:break-word}
+.sub{color:var(--muted);font-size:.95rem;margin:3px 0 0;word-break:break-word}
 .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.info{background:var(--cream);border:1px solid #eee4d6;border-radius:15px;padding:17px}
+.info{background:var(--cream);border:1px solid #eee4d6;border-radius:15px;padding:17px;word-break:break-word}
 .label{color:var(--muted);font-size:.88rem;font-weight:700}
-.value{font-size:1.05rem;font-weight:800;margin-top:5px}
+.value{font-size:1.05rem;font-weight:800;margin-top:5px;word-break:break-word}
 .value small{display:block;font-size:.9rem;font-weight:500;color:var(--muted)}
-.notice{margin-top:18px;padding:13px 16px;background:#f6efdf;border-left:4px solid var(--gold);border-radius:8px}
-.event-image{display:block;width:100%;height:auto;border-radius:14px;border:1px solid #e5d8c7}
-.caption{font-size:.9rem;color:var(--muted);margin:9px 2px 0}
+.notice{margin-top:18px;padding:13px 16px;background:#f6efdf;border-left:4px solid var(--gold);border-radius:8px;word-break:break-word}
+.event-image{display:block;width:100%;max-width:100%;height:auto;border-radius:14px;border:1px solid #e5d8c7}
+.caption{font-size:.9rem;color:var(--muted);margin:9px 2px 0;word-break:break-word}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-.step{padding:16px;border-radius:14px;background:#f7f4ed;border:1px solid #e8dfd1}
+.step{padding:16px;border-radius:14px;background:#f7f4ed;border:1px solid #e8dfd1;word-break:break-word}
 .step b{display:block;margin-bottom:5px;color:var(--brown)}
 .fields{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.field{border:1px solid #e7ddcf;border-radius:13px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
+.field{border:1px solid #e7ddcf;border-radius:13px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start;word-break:break-word}
 .field .dot{width:9px;height:9px;background:var(--olive);border-radius:50%;margin-top:9px;flex-shrink:0}
 .field strong{display:block}
-.field span{font-size:.9rem;color:var(--muted)}
+.field span{font-size:.9rem;color:var(--muted);word-break:break-word}
 .schedule-placeholder{border:1px dashed #c8b89f;background:#faf6ee;border-radius:15px;padding:24px;text-align:center;color:var(--muted)}
 .schedule-placeholder strong{display:block;color:var(--brown);font-size:1.08rem;margin-bottom:6px}
-.footer{text-align:center;color:#786c5e;padding:10px 15px 35px;font-size:.9rem}
-@media(max-width:720px){.hero{padding:42px 18px 35px}.info-grid,.steps{grid-template-columns:1fr}.fields{grid-template-columns:1fr}.section{padding:21px}.intro{padding:20px}.nav-inner{gap:2px}.nav a{font-size:.83rem;padding:7px 9px}}
+.footer{text-align:center;color:#786c5e;padding:10px 15px 35px;font-size:.9rem;word-break:break-word}
+.map-container {
+  margin-top: 24px;
+}
+
+.map-container h3 {
+  margin-bottom: 8px;
+}
+
+.map-container p {
+  margin-bottom: 14px;
+  color: #666;
+  line-height: 1.6;
+  word-break: break-word;
+}
+
+.map-container iframe {
+  display: block;
+  max-width: 100%;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 18px;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.map-link:hover {
+  background: #1d4ed8;
+}
+
+/* 行程表格樣式優化 */
+.itinerary-day{margin:18px 0 24px;border:1px solid #e8ddcd;border-radius:16px;overflow:hidden;background:#fff}
+.itinerary-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 18px;background:#edf0e5;border-bottom:1px solid #dce2cf}
+.itinerary-head h3{margin:0;color:#4f6038;font-size:1.2rem}
+.itinerary-date{font-size:.92rem;color:#66724b;font-weight:800}
+.itinerary-scroll{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.itinerary-table{width:100%;border-collapse:collapse;min-width:580px;line-height:1.6}
+.itinerary-table th{background:#faf6ee;color:#70665c;text-align:left;font-size:.86rem;padding:11px 14px;white-space:nowrap}
+.itinerary-table td{padding:11px 14px;border-top:1px solid #eee4d6;vertical-align:top;word-break:break-word}
+.itinerary-table tbody tr:nth-child(even){background:#fdfbf7}
+.itinerary-time{white-space:nowrap;font-weight:800;color:#624634;font-variant-numeric:tabular-nums;width:90px}
+.itinerary-end{white-space:nowrap;color:#70665c;font-variant-numeric:tabular-nums;width:90px}
+.meal-tag{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:#e8eddf;color:#4f6038;font-size:.78rem;font-weight:800;white-space:nowrap}
+
+@media(max-width:768px){
+  .hero{padding:42px 18px 35px}
+  .info-grid,.steps,.fields{grid-template-columns:1fr}
+  .section{padding:20px 16px}
+  .intro{padding:18px 16px}
+  .nav-inner{justify-content:flex-start;padding:10px}
+  .nav a{font-size:.85rem;padding:6px 11px}
+}
 @media print{.nav{position:static}.hero{background:#fff;color:#30251f;border-bottom:2px solid #30251f}.hero p,.kicker{color:#624634}body{background:#fff}.section,.intro{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
@@ -80,7 +137,7 @@ h2{font-size:1.55rem;margin:0;line-height:1.4}
     <div class="info-grid">
       <div class="info"><div class="label">集合日期</div><div class="value">2026 年 10 月 24 日（六）</div></div>
       <div class="info"><div class="label">集合時間</div><div class="value">上午 08:00</div></div>
-      <div class="info"><div class="label">集合地點</div><div class="value">新竹北門聖教會<small>太原路 2 號・101 副堂前</small></div></div>
+      <div class="info"><div class="label">集合地點</div><div class="value">新竹北門聖教會・101 副堂前<small>太原路 2 號</small></div></div>
     </div>
     <div class="notice">提醒：請依照通知時間準時集合；如有交通或集合相關疑問，請向活動負責同工確認。</div>
   </section>
@@ -104,17 +161,17 @@ h2{font-size:1.55rem;margin:0;line-height:1.4}
       <div class="num">03</div>
       <div><h2>名牌資訊</h2><p class="sub">請確認名牌內容，活動期間可依名牌資訊辨識安排。</p></div>
     </div>
+    <img class="event-image" src="assets/card.png" alt="名牌示意圖">
+    <p class="caption">AI 名牌示意圖｜以當天發放實際名牌為準。</p>
     <div class="fields">
       <div class="field"><div class="dot"></div><div><strong>姓名</strong><span>確認姓名是否正確。</span></div></div>
-      <div class="field"><div class="dot"></div><div><strong>車次</strong><span>確認所屬車輛資訊。</span></div></div>
+      <div class="field"><div class="dot"></div><div><strong>車號</strong><span>確認所屬車輛資訊。</span></div></div>
       <div class="field"><div class="dot"></div><div><strong>第一天午餐桌號</strong><span>依名牌標示前往指定桌次。</span></div></div>
       <div class="field"><div class="dot"></div><div><strong>房號</strong><span>依名牌標示確認住宿房間。</span></div></div>
       <div class="field"><div class="dot"></div><div><strong>第二天早餐時段</strong><span>請依名牌所列時段用餐。</span></div></div>
       <div class="field"><div class="dot"></div><div><strong>第二天午餐桌號</strong><span>依名牌標示前往指定桌次。</span></div></div>
     </div>
-    <div class="notice">領取名牌後，請立即核對以上資料。若資訊有誤或不清楚，請洽報到處工作人員協助確認。</div>
-	<img class="event-image" src="assets/card.png" alt="名牌示意圖">
-    <p class="caption">AI 名牌示意圖</p>
+    <div class="notice">領取名牌後，請立即核對以上資料。若資訊有誤或不清楚，請洽報到處工作人員協助確認。</div>	
   </section>
 
   <section class="section" id="schedule">
@@ -122,22 +179,6 @@ h2{font-size:1.55rem;margin:0;line-height:1.4}
       <div class="num">04</div>
       <div><h2>行程規劃</h2><p class="sub">詳細時程以主辦單位後續公告及現場通知為準。</p></div>
     </div>
-    <style>
-      .itinerary-day{margin:18px 0 24px;border:1px solid #e8ddcd;border-radius:16px;overflow:hidden;background:#fff}
-      .itinerary-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 18px;background:#edf0e5;border-bottom:1px solid #dce2cf}
-      .itinerary-head h3{margin:0;color:#4f6038;font-size:1.2rem}
-      .itinerary-date{font-size:.92rem;color:#66724b;font-weight:800}
-      .itinerary-scroll{overflow-x:auto}
-      .itinerary-table{width:100%;border-collapse:collapse;min-width:580px;line-height:1.6}
-      .itinerary-table th{background:#faf6ee;color:#70665c;text-align:left;font-size:.86rem;padding:11px 14px}
-      .itinerary-table td{padding:11px 14px;border-top:1px solid #eee4d6;vertical-align:top}
-      .itinerary-table tbody tr:nth-child(even){background:#fdfbf7}
-      .itinerary-time{white-space:nowrap;font-weight:800;color:#624634;font-variant-numeric:tabular-nums;width:100px}
-      .itinerary-end{white-space:nowrap;color:#70665c;font-variant-numeric:tabular-nums;width:100px}
-      .meal-tag{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;background:#e8eddf;color:#4f6038;font-size:.78rem;font-weight:800;white-space:nowrap}
-      @media(max-width:720px){.itinerary-head{padding:13px 14px}.itinerary-table td{padding:10px 11px}}
-      @media print{.itinerary-day{break-inside:avoid}.itinerary-scroll{overflow:visible}.itinerary-table{min-width:0}}
-    </style>
     <div class="itinerary-day">
       <div class="itinerary-head"><h3>Day 1｜集合・參訪・團契</h3><span class="itinerary-date">10/24（六）</span></div>
       <div class="itinerary-scroll">
@@ -189,15 +230,37 @@ h2{font-size:1.55rem;margin:0;line-height:1.4}
       <div class="num">05</div>
       <div><h2>停車資訊</h2><p class="sub">請依車種停放於指定區域，並配合教會場地管理。</p></div>
     </div>
+    <div class="map-container">
+      <h3>📍 停車地點地圖</h3>
+      <p>300 新竹市東區水源里太原路 42-66 號(北門聖教會大型停車場)</p>
+      <iframe
+        src="https://maps.google.com/maps?q=300%20%E6%96%B0%E7%AB%B9%E5%B8%82%E6%9D%B1%E5%8D%80%E6%B0%B4%E6%BA%90%E9%87%8C%20%E5%A4%AA%E5%8E%9F%E8%B7%AF%2042-66&output=embed"
+        width="100%"
+        height="350"
+        style="border:0; border-radius:12px;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=300%20新竹市東區水源里太原路%2042-66"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="map-link">
+        開啟 Google 地圖導航 →
+      </a>
+    </div>
+    <br/>
+    <img class="event-image" src="assets/parking.jpg" alt="停車">
+	<BR/>
     <div class="fields">
       <div class="field"><div class="dot"></div><div><strong>汽車停車</strong><span>汽車請停教會大型停車場。</span></div></div>
-      <div class="field"><div class="dot"></div><div><strong style="color: red;">禁止停放區域</strong><span>汽車禁止停教會內籃球場。</span></div></div>
+      <!--<div class="field"><div class="dot"></div><div><strong style="color: red;">禁止停放區域</strong><span><strong style="color: red;">勿將汽車停放於教會內籃球場。</strong></span></div></div>-->
       <div class="field"><div class="dot"></div><div><strong>機車停車</strong><span>機車請停教會機車停車區。</span></div></div>
     </div>
-    <div class="notice">請務必遵守停車安排，勿將汽車停放於教會內籃球場，以免影響場地使用。</div>
-	<img class="event-image" src="assets/parking.jpg" alt="停車">
+    <div class="notice">請務必遵守停車安排，<strong style="color: red;">勿將汽車停放於教會內籃球場</strong>，以免影響場地使用。</div>
   </section>
-
 </main>
 <footer class="footer">新竹北門聖教會・橄欖樹牧區｜2026 退修會行前說明</footer>
 </body>
